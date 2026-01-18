@@ -1,2 +1,65 @@
-# FRUIT_CUTTING_GAME
-Gesture-Controlled Fruit Ninja in Python  A high-quality Fruit Ninja–style game where you slice fruits using only your hand in front of a webcam—no mouse, no keyboard. The game combines a polished Pygame interface (HD fruit sprites, splashes, bombs, menus, HUD) with smooth, real-time gesture control powered by MediaPipe and OpenCV. ​  Features Hand gesture slicing  Your index fingertip acts as a virtual blade tracked from the webcam.  Adaptive smoothing + velocity-based detection for responsive but stable control (no jittery cursor). ​  HD Fruit Ninja–style visuals  High-quality sprites for apples, bananas, oranges, watermelons, and bombs.  Animated fruit arcs, spinning motion, sliced halves, juice splashes, and bomb explosions. ​  Game mechanics  Multiple fruit types with different scores and physics.  Bombs reduce lives; fruits increase score with combo multipliers for fast consecutive slices.  Selectable game durations (e.g., 60s / 120s), lives system, and persistent high score.  Tech stack  Python  Pygame for rendering, animation, and audio.  OpenCV for webcam capture.  MediaPipe Hands for real-time hand landmark tracking. ​  How it works The webcam feed is processed with MediaPipe Hands to track the index fingertip in real time.  The fingertip coordinates are mapped into the Pygame window, smoothed, and used to create a trailing “blade” path.  Only fast movements (above a velocity threshold) are treated as slices, which makes gameplay feel like real swipes instead of random jitter. ​ ​  When the blade path intersects a fruit’s hit circle, the fruit is sliced into animated halves, a splash effect is shown, and score/combos are updated.  If the path intersects a bomb, a bomb sound + explosion is triggered and a life is lost.  Setup Clone the repository:  bash git clone https://github.com/<your-username>/<your-repo-name>.git cd <your-repo-name> Install dependencies:  bash pip install pygame opencv-python mediapipe numpy Ensure assets are in place:  assets/fruits/ – fruit and bomb sprites (whole + halves).  assets/splashes/ – splash/explosion sprites.  assets/background.png – background image.  sounds/ – bgm.mp3, slice.wav, bomb.wav.  Run the game:  bash python main.py Controls & Gameplay Stand in front of your webcam so your hand is visible.  Move your index finger to control the on-screen blade cursor.  Swipe quickly across fruits to slice them; avoid bombs.  Z / C – change timer value in the main menu.  SPACE – start game.  P – pause / resume during gameplay.  R – replay after game over.  Q – quit from game over screen.  Possible extensions Multiple difficulty modes (spawn rate, speed, bomb ratio). ​  Two-player or versus modes using multiple hands.  Advanced gesture recognition (different gestures to trigger power-ups, slow motion, etc.).
+Gesture-Controlled Fruit Ninja in Python:
+A high-quality Fruit Ninja–style game where you slice fruits using only your hand in front of a webcam—no mouse, no keyboard. The game combines a polished Pygame interface (HD fruit sprites, splashes, bombs, menus, HUD) with smooth, real-time gesture control powered by MediaPipe and OpenCV.
+​
+Features:
+Hand gesture slicing
+Your index fingertip acts as a virtual blade tracked from the webcam.
+Adaptive smoothing + velocity-based detection for responsive but stable control (no jittery cursor).
+​
+HD Fruit Ninja–style visuals:
+High-quality sprites for apples, bananas, oranges, watermelons, and bombs.
+Animated fruit arcs, spinning motion, sliced halves, juice splashes, and bomb explosions.
+​
+Game mechanics:
+Multiple fruit types with different scores and physics.
+Bombs reduce lives; fruits increase score with combo multipliers for fast consecutive slices.
+Selectable game durations (e.g., 60s / 120s), lives system, and persistent high score.
+
+Tech stack:
+Python
+Pygame for rendering, animation, and audio.
+OpenCV for webcam capture.
+MediaPipe Hands for real-time hand landmark tracking.
+​
+How it works:
+The webcam feed is processed with MediaPipe Hands to track the index fingertip in real time.
+The fingertip coordinates are mapped into the Pygame window, smoothed, and used to create a trailing “blade” path.
+Only fast movements (above a velocity threshold) are treated as slices, which makes gameplay feel like real swipes instead of random jitter.​
+When the blade path intersects a fruit’s hit circle, the fruit is sliced into animated halves, a splash effect is shown, and score/combos are updated.
+If the path intersects a bomb, a bomb sound + explosion is triggered and a life is lost.
+
+Setup:
+Clone the repository:
+
+git clone https://github.com/<your-username>/<your-repo-name>.gitp
+cd <your-repo-name>
+
+Install dependencies:
+
+pip install pygame opencv-python mediapipe numpy
+
+Ensure assets are in place:
+assets/fruits/ – fruit and bomb sprites (whole + halves).
+assets/splashes/ – splash/explosion sprites.
+assets/background.png – background image.
+sounds/ – bgm.mp3, slice.wav, bomb.wav.
+
+Run the game:
+bash
+python main.py
+Controls & Gameplay
+Stand in front of your webcam so your hand is visible.
+Move your index finger to control the on-screen blade cursor.
+Swipe quickly across fruits to slice them; avoid bombs.
+
+Z / C – change timer value in the main menu.
+
+SPACE – start game.
+P – pause / resume during gameplay.
+R – replay after game over.
+Q – quit from game over screen.
+
+Possible extensions:
+Multiple difficulty modes (spawn rate, speed, bomb ratio).​
+Two-player or versus modes using multiple hands.
+Advanced gesture recognition (different gestures to trigger power-ups, slow motion, etc.).
